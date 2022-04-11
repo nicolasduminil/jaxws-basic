@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:soap="http://cxf.apache.org/bindings/soap" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lien="com.grdf.poc.indexAutoReleve.V1.1.common" xmlns:rep="com.grdf.poc.IndexAutoReleveRequest-v1.2" targetNamespace="com.grdf.poc.IndexAutoReleveRequest-v1.2" elementFormDefault="qualified">
+  <xsd:import namespace="com.grdf.poc.indexAutoReleve.V1.1.common" schemaLocation="pivot/com.grdf.poc.indexAutoReleve.V1.1.common.xsd" />
+  <xsd:element name="indexAutoReleveRequest" type="rep:indexAutoReleveRequestType" />
+  <xsd:complexType name="indexAutoReleveRequestType">
+    <xsd:sequence>
+      <xsd:element ref="lien:indexAutoReleve" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

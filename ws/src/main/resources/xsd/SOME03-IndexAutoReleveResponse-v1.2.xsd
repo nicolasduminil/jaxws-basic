@@ -1,0 +1,37 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:lien="com.grdf.poc.indexAutoReleve.V1.1.common" xmlns:rep="com.grdf.poc.IndexAutoReleveResponse-v1.2" targetNamespace="com.grdf.poc.IndexAutoReleveResponse-v1.2" elementFormDefault="qualified">
+  <xsd:import namespace="com.grdf.poc.indexAutoReleve.V1.1.common" schemaLocation="pivot/com.grdf.poc.indexAutoReleve.V1.1.common.xsd"/>
+  <xsd:element name="indexAutoReleveResponse" type="rep:indexAutoReleveResponseType"/>
+  <!-- Types complexes -->
+  <xsd:complexType name="indexAutoReleveResponseType">
+    <xsd:sequence>
+      <xsd:element ref="lien:indexAutoReleve" minOccurs="0"/>
+      <xsd:element name="resultat" type="rep:resultType" minOccurs="0"/>
+      <xsd:element name="erreur" type="rep:erreurType" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="erreurType">
+    <xsd:sequence>
+      <xsd:element name="code" type="rep:codeErreurType"/>
+      <xsd:element name="libelle" type="rep:libelleErreurType"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <!-- Types simples -->
+  <xsd:simpleType name="codeErreurType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="15"/>
+      <xsd:maxLength value="25"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="libelleErreurType">
+    <xsd:restriction base="xsd:string">
+      <xsd:minLength value="1"/>
+      <xsd:maxLength value="200"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="resultType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="OK"/>
+      <xsd:enumeration value="KO"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>

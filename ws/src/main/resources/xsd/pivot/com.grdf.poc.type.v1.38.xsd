@@ -1,0 +1,3434 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Created with Liquid XML 2016 Editor Edition 14.1.5.6733 (https://www.liquid-technologies.com)-->
+<xs:schema xmlns="com.grdf.poc.type.v1.38" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="com.grdf.poc.type.v1.38" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="TidBulletinMeteo">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidStationMeteo">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleStationMeteo">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleCompteur">
+        <xs:restriction base="xs:string">
+            <xs:length value="14" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TemplacementCompteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="interieur" />
+            <xs:enumeration value="exterieur" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidConso">
+        <xs:restriction base="xs:string">
+            <xs:length value="14" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeQualificationConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EST" />
+            <xs:enumeration value="MES" />
+            <xs:enumeration value="COR" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidZoneGaz">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeZoneGeographique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidIlotGaz">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidDemandeTeleconf">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurIndex">
+        <xs:restriction base="xs:long">
+            <xs:minInclusive value="00000000" />
+            <xs:maxInclusive value="99999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeModeAcquisitionIndex">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="TLR" />
+            <xs:enumeration value="INT" />
+            <xs:enumeration value="ACR" />
+            <xs:enumeration value="NCO" />
+            <xs:enumeration value="ARR" />
+            <xs:enumeration value="RAP" />
+            <xs:enumeration value="ARF" />
+            <xs:enumeration value="ARI" />
+            <xs:enumeration value="ARP" />
+            <xs:enumeration value="ARS" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeQualificationIndex">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MES" />
+            <xs:enumeration value="EST" />
+            <xs:enumeration value="COR" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeIndex">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CON" />
+            <xs:enumeration value="SUS" />
+            <xs:enumeration value="ERR" />
+            <xs:enumeration value="ANN" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TclePCE">
+        <xs:restriction base="xs:string">
+            <xs:length value="14" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TCAR">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="21" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TCMR">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="21" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeProfil">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="P000" />
+            <xs:enumeration value="P011" />
+            <xs:enumeration value="P012" />
+            <xs:enumeration value="P013" />
+            <xs:enumeration value="P014" />
+            <xs:enumeration value="P015" />
+            <xs:enumeration value="P016" />
+            <xs:enumeration value="P017" />
+            <xs:enumeration value="P018" />
+            <xs:enumeration value="P019" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTarif">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="typeDeTarifGestionDechets" />
+            <xs:enumeration value="typeDeTarifElectricite1" />
+            <xs:enumeration value="typeDeTarifGaz1" />
+            <xs:enumeration value="grosClient" />
+            <xs:enumeration value="tarifT1" />
+            <xs:enumeration value="tarifT2" />
+            <xs:enumeration value="tarifT3" />
+            <xs:enumeration value="tarifT4" />
+            <xs:enumeration value="propane" />
+            <xs:enumeration value="tarifTF" />
+            <xs:enumeration value="tarifTP" />
+            <xs:enumeration value="tarifGenerique" />
+            <xs:enumeration value="typeDeTarifEau1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTarifDisco">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1,4}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatComm">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="initialise" />
+            <xs:enumeration value="equipe" />
+            <xs:enumeration value="non equipe" />
+            <xs:enumeration value="reconcilie" />
+            <xs:enumeration value="ASRAP" />
+            <xs:enumeration value="echecTelereleve" />
+            <xs:enumeration value="telereleve" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatComptage">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifMiseSousSurveillance">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1024" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEmplacementCompteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeNatureGaz">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="B" />
+            <xs:enumeration value="H" />
+            <xs:enumeration value="Propane" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoefficientThermique">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2},[0-9]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifEchecPassageTelereleve">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="512" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeOperationPCE">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="creation" />
+            <xs:enumeration value="suppression" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutPCE">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="actif" />
+            <xs:enumeration value="inactif" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TorigineGeocodage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TqualiteGeocodage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoordonneeX">
+        <xs:restriction base="xs:token">
+            <xs:pattern value="(\+|-)?([0-9]+(,[0-9]+)?)" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoordonneeY">
+        <xs:restriction base="xs:token">
+            <xs:pattern value="(\+|-)?([0-9]+(,[0-9]+)?)" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoordonneeZ">
+        <xs:restriction base="xs:token">
+            <xs:pattern value="(\+|-)?([0-9]+(,[0-9]+)?)" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TCodeTypeCoordonnees">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TValeurCoordonnees">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tcommentaire">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tequipement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpressionLivraison">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{1},[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeCalcul">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mode1" />
+            <xs:enumeration value="mode2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeCentre">
+        <xs:restriction base="xs:string">
+            <xs:length value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TgroupeMoisComptable">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="01" />
+            <xs:enumeration value="02" />
+            <xs:enumeration value="03" />
+            <xs:enumeration value="04" />
+            <xs:enumeration value="05" />
+            <xs:enumeration value="06" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TgroupeReleve">
+        <xs:restriction base="xs:string">
+            <xs:length value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatContrat">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifNonIntegration">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="512" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeAvertissement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleAvertissement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleEmetteur">
+        <xs:restriction base="xs:string">
+            <xs:length value="15" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpasDeMesureDemande">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="00" />
+            <xs:enumeration value="01" />
+            <xs:enumeration value="02" />
+            <xs:enumeration value="03" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpasDeMesureConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="00" />
+            <xs:enumeration value="01" />
+            <xs:enumeration value="02" />
+            <xs:enumeration value="03" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeEmetteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="integre" />
+            <xs:enumeration value="deporte" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeParametre">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurCibleParametre">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleConfEmetteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurConfEmetteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="2000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumVerHardwareDdC">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumVerSoftwareDdC">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcanalMsgAsc">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="169.406250MHz" />
+            <xs:enumeration value="169.418750MHz" />
+            <xs:enumeration value="169.431250MHz" />
+            <xs:enumeration value="169.443750MHz" />
+            <xs:enumeration value="169.456250MHz" />
+            <xs:enumeration value="169.468750MHz" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcanalMsgDesc">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="169.406250MHz" />
+            <xs:enumeration value="169.418750MHz" />
+            <xs:enumeration value="169.431250MHz" />
+            <xs:enumeration value="169.443750MHz" />
+            <xs:enumeration value="169.456250MHz" />
+            <xs:enumeration value="169.468750MHz" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodulationMsgAsc">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WM-2400" />
+            <xs:enumeration value="WM-4800" />
+            <xs:enumeration value="WM-HSPEED" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodulationMsgDesc">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WM-2400" />
+            <xs:enumeration value="WM-4800" />
+            <xs:enumeration value="WM-HSPEED" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpuissanceEmission">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PMax" />
+            <xs:enumeration value="PMax-6db" />
+            <xs:enumeration value="PMax-12db" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeRetourPuissanceEmissionMax">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="99999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcorrectionFreqEmission">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="-32768" />
+            <xs:maxInclusive value="32767" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeMsgAscEcouteDesc">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TdureeFenetreEcouteMsgDesc">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlongueurMaxMsgEmis">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="40" />
+            <xs:maxInclusive value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeRcptCmdDescEmissionRep">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeMinFabricantRcptCmdDescEmissionRep">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlongueurMaxMsgRecus">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="50" />
+            <xs:maxInclusive value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcorrectionRelativeHorloge">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="-32768" />
+            <xs:maxInclusive value="32767" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcorrectionPenteHorlogeSeconde">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="-128" />
+            <xs:maxInclusive value="127" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumCleChiffrement">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbClesChiffrement">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeEmissionRcpt">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="60" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeEcouteMsgInspong">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeMinFabricantEmissionRcpt">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="60" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeMaxFabricantEcoute">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbMsgDifferentsRecusDernierTestConnect">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TheureGaziereUTCEmetteur">
+        <xs:restriction base="xs:time" />
+    </xs:simpleType>
+    <xs:simpleType name="TdureeFenetreTransTelereleve">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbFenetresTransPasDeMesureJ">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1fenetre" />
+            <xs:enumeration value="2fenetres" />
+            <xs:enumeration value="3fenetres" />
+            <xs:enumeration value="4fenetres" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbFenetresTransPasDeMesureH">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1fenetre" />
+            <xs:enumeration value="2fenetres" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TperiodeEmissionTrameConfig">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="desactive" />
+            <xs:enumeration value="30jours" />
+            <xs:enumeration value="90jours" />
+            <xs:enumeration value="180jours" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbFenetreTransTrameConfig">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1fenetre" />
+            <xs:enumeration value="2fenetres" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbFenetreTransTrameSupervision">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1fenetre" />
+            <xs:enumeration value="2fenetres" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeFonctionnementDdC">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Sourd-muet" />
+            <xs:enumeration value="Stockage" />
+            <xs:enumeration value="Test" />
+            <xs:enumeration value="Nominal" />
+            <xs:enumeration value="Degrade" />
+            <xs:enumeration value="Stop" />
+            <xs:enumeration value="Fin_de_vie" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdelaiAttenteAvantEffacementBitsVecteurEtat">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="15" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbRouesCompteur">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="4" />
+            <xs:maxInclusive value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbRouesTICC">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="4" />
+            <xs:enumeration value="5" />
+            <xs:enumeration value="8" />
+            <xs:enumeration value="9" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeSituationCompteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="L" />
+            <xs:enumeration value="C" />
+            <xs:enumeration value="S" />
+            <xs:enumeration value="G" />
+            <xs:enumeration value="E" />
+            <xs:enumeration value="A" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeCompteur">
+        <xs:restriction base="xs:string">
+            <xs:length value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeConstructeurCompteur">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcalibreCompteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="6" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtechnologieCompteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmarqueCompteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumMatriculeCompteur">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroMatriculeCompteur">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmarquePriseBasseFrequence">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeEnveloppe">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TenregCRIGEN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePoidsImpulsion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="nonRenseigne" />
+            <xs:enumeration value="10L" />
+            <xs:enumeration value="100L" />
+            <xs:enumeration value="1m3" />
+            <xs:enumeration value="10m3" />
+            <xs:enumeration value="100m3" />
+            <xs:enumeration value="nonAffecte" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatCapteurInductifCompteursIntegres">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="signalNormal" />
+            <xs:enumeration value="signalTropFaible" />
+            <xs:enumeration value="signalFaible" />
+            <xs:enumeration value="signalTropFort" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TregimeProprieteCompteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="L" />
+            <xs:enumeration value="P" />
+            <xs:enumeration value="H" />
+            <xs:enumeration value="J" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeDebitCompteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="inferieur_a_5" />
+            <xs:enumeration value="5_a_6" />
+            <xs:enumeration value="6,1_a_10" />
+            <xs:enumeration value="10,1_a_16" />
+            <xs:enumeration value="16,1_a_25" />
+            <xs:enumeration value="25,1_a_40" />
+            <xs:enumeration value="40,1_a_65" />
+            <xs:enumeration value="65,1_a_100" />
+            <xs:enumeration value="100,1_a_160" />
+            <xs:enumeration value="superieur_a_160" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TentraxeCompteur">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeNatureUsage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeBranchtCompteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="individuelProductif" />
+            <xs:enumeration value="individuelImproductif" />
+            <xs:enumeration value="collectifProductif" />
+            <xs:enumeration value="collectifImproductif" />
+            <xs:enumeration value="forfaitCuisine" />
+            <xs:enumeration value="venteGazRepartie" />
+            <xs:enumeration value="aucun" />
+            <xs:enumeration value="autre3" />
+            <xs:enumeration value="autre4" />
+            <xs:enumeration value="autre9" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeModeAlimentation">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeNatureOperation">
+        <xs:restriction base="xs:string">
+            <xs:length value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TinfoDetendeurG10">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTarifFraisAppareil">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeFraisAppareil">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroSerieCompteur">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroSerieCompteurGMAO">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeFrequenceTransmission">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mensuelle" />
+            <xs:enumeration value="semestrielle" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeFrequenceReleve">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="journalier" />
+            <xs:enumeration value="horaire" />
+            <xs:enumeration value="infraHoraire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeFrequenceAbonnement">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mensuel" />
+            <xs:enumeration value="semestriel" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdatePublication">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="01" />
+            <xs:maxInclusive value="28" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeAbonnement">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PCEenEtatEquipe" />
+            <xs:enumeration value="priseAbonnement" />
+            <xs:enumeration value="desabonnement" />
+            <xs:enumeration value="autre" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidReleve">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeReleve">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="normal" />
+            <xs:enumeration value="special" />
+            <xs:enumeration value="corrige" />
+            <xs:enumeration value="annule" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TraisonReleve">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cyclique" />
+            <xs:enumeration value="evenementielle" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurCoeffCorrec">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="26" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurMesure">
+        <xs:restriction base="xs:float" />
+    </xs:simpleType>
+    <xs:simpleType name="TuniteMesure">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeMesure">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomCommuneLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeINSEE">
+        <xs:restriction base="xs:string">
+            <xs:length value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomRueLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="512" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumRueLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdigicodeLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TemplacementLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="11" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tcomplement1AdresseLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tcomplement2AdresseLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeVoieLocal">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePostalLocal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeDeptLocal">
+        <xs:restriction base="xs:string">
+            <xs:length value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroPrefixeAdresseCadastrale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsectionAdresseCadastrale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumParcelleAdresseCadastrale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tposte">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1" />
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdesignationPoste">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumConduiteMontante">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TboitierTelereport">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdetecteurCompteurDialogaz">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TreperageRobinetOrganeCoupure">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="6" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleConcentrateur">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="Tmarque">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TfabricantConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="Tgps">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieElement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tprotocole">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcleInitConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TgeocodeConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeLogicielConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TlogicielConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielConcentrateur">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielCompatible">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidCoffretConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotAntenne">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeContactPrefere">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumRueClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomRueClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePostalClient">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomCommuneClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcomplementAdrs1Client">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcomplementAdrs2Client">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TrefClient">
+        <xs:restriction base="xs:string">
+            <xs:length value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatClient">
+        <xs:restriction base="xs:string">
+            <xs:length value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomAbonne">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomPayeur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TadressePayeurComplement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="28" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TadressePayeur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeClient">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0" />
+            <xs:enumeration value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeCategorieAbonne">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurPCS">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="8" />
+            <xs:maxInclusive value="13" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypePCS">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="calcule" />
+            <xs:enumeration value="corrige" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoefPTA">
+        <xs:restriction base="xs:float" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeCoefPTA">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="calcule" />
+            <xs:enumeration value="corrige" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoefConversion">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2},[0-9]{5}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeCoefConversion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="calcule" />
+            <xs:enumeration value="corrige" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceDI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Omega" />
+            <xs:enumeration value="MADD" />
+            <xs:enumeration value="IhmMADDpourOmega" />
+            <xs:enumeration value="PRES" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdescriptionDI">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleDI">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeNatureDI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="nouvellePrestation" />
+            <xs:enumeration value="annulation" />
+            <xs:enumeration value="abandon" />
+            <xs:enumeration value="expirationAnticipee" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutDI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="nonRecevable" />
+            <xs:enumeration value="priseEnCompte" />
+            <xs:enumeration value="enAttenteDeRealisation" />
+            <xs:enumeration value="realisee" />
+            <xs:enumeration value="enAttenteExpiration" />
+            <xs:enumeration value="expiree" />
+            <xs:enumeration value="annulee" />
+            <xs:enumeration value="abandonnee" />
+            <xs:enumeration value="echecExpiration" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutOrdreTeleconf">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cree" />
+            <xs:enumeration value="envoye" />
+            <xs:enumeration value="enAttente" />
+            <xs:enumeration value="succes" />
+            <xs:enumeration value="echec" />
+            <xs:enumeration value="annule" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeDI">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TprioriteDI">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExtDI">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="12000000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeChangementTeleconf">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="36" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlocalisationCoupure">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="9" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifCoupure">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeNatureCoupure">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcoupureDGI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="dangerGrave" />
+            <xs:enumeration value="localSur" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleSourceDI">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TmotifStatutDI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="enCoursEnvoi" />
+            <xs:enumeration value="echecEnvoi" />
+            <xs:enumeration value="succesEnvoi" />
+            <xs:enumeration value="echecTeleconfiguration" />
+            <xs:enumeration value="succesTeleconfiguration" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpasDeMesure">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="journalier" />
+            <xs:enumeration value="horaire" />
+            <xs:enumeration value="infra-horaire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleAlarme">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatAlarme">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleTypeAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcriticiteAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TgraviteAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatut">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="succes" />
+            <xs:enumeration value="echec" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbEvenementsAssocies">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifCloture">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TexplicationCloture">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcontexteAlarme">
+        <xs:restriction base="xs:string" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeAccessibiliteCompteur">
+        <xs:restriction base="xs:string">
+            <xs:length value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tjour">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="31" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tmois">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtauxTVAFacture">
+        <xs:restriction base="xs:float" />
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneConso">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tflag">
+        <xs:restriction base="xs:boolean" />
+    </xs:simpleType>
+    <xs:simpleType name="Tpourcentage">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tannee">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TanneeFabricationCompteurGMAO">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidConcentrateurTelereport">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Ttel">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{10}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtelPoste">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="11" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TemailAddress">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+            <xs:pattern value="[^@]+@[^\.]+\..+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidDemande">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneDemande">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeNature">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidOrdreTeleconfiguration">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsequenceImpulsion">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurImpulsion">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutImpulsion">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeModeAcquisitionImpulsion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ACR" />
+            <xs:enumeration value="INT" />
+            <xs:enumeration value="TLR" />
+            <xs:enumeration value="NCO" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeIntervention">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="pose" />
+            <xs:enumeration value="depose" />
+            <xs:enumeration value="remplacement" />
+            <xs:enumeration value="interventionSurExistant" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidSite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneDISite">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="9999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidIntervenantDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdemandeurDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeDISite">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="deploiement" />
+            <xs:enumeration value="maintenanceCorrective" />
+            <xs:enumeration value="maintenancePreventive" />
+            <xs:enumeration value="depose" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifRefusDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleMotifRefusDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutDISite">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="succes" />
+            <xs:enumeration value="echec" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TinfoCertificat">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="512" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeActionRealDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdescActionsRealDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tdescription">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidModem">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TevtLogConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="300000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TfichierConfWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TfichierConfConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIMSI">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{15}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeElement">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="blocAlimentation" />
+            <xs:enumeration value="convertisseur" />
+            <xs:enumeration value="disjoncteur" />
+            <xs:enumeration value="parasurtenseur" />
+            <xs:enumeration value="carteDeBrassage" />
+            <xs:enumeration value="uniteCentrale" />
+            <xs:enumeration value="moduleGPS" />
+            <xs:enumeration value="antenneLAN" />
+            <xs:enumeration value="antenneGPS" />
+            <xs:enumeration value="antenneWAN" />
+            <xs:enumeration value="modemWAN" />
+            <xs:enumeration value="modemLAN" />
+            <xs:enumeration value="carteSIM" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcompteurEquipable">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidFluxEvenementPCE">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcomplementVoie2">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeOrigineConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CYC" />
+            <xs:enumeration value="EVT" />
+            <xs:enumeration value="ITM" />
+            <xs:enumeration value="INF" />
+            <xs:enumeration value="PRO" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeMessage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="journalier" />
+            <xs:enumeration value="horaire" />
+            <xs:enumeration value="infraHoraire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Thorodate">
+        <xs:restriction base="xs:dateTime" />
+    </xs:simpleType>
+    <xs:simpleType name="Tdate">
+        <xs:restriction base="xs:date" />
+    </xs:simpleType>
+    <xs:simpleType name="TidDemandeConso">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneDemandeConso">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpasDemandeConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="journalier" />
+            <xs:enumeration value="horaire" />
+            <xs:enumeration value="journalierEtHoraire" />
+            <xs:enumeration value="journalierEtInfraHoraire" />
+            <xs:enumeration value="infraHoraire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceDemandeConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Omega" />
+            <xs:enumeration value="PortailClient" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumVoie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TextensionVoie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeVoie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeVoie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomVoie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcomplementVoie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlieuDit">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tcedex">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleLocalite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeDivisionTerritoriale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleDivisionTerritoriale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePays">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibellePays">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TprioriteIntervention">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifEchecConnexionWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumDemandeClient">
+        <xs:restriction base="xs:long">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="999999999999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeDemandeClient">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="demandeInformation" />
+            <xs:enumeration value="demandeModificationRDV" />
+            <xs:enumeration value="demandeReclamation" />
+            <xs:enumeration value="enqueteSatisfaction" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsousTypeDemandeClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdescriptionDemandeClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutDemandeClient">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="prisEnCharge" />
+            <xs:enumeration value="traite" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutAbonnementConsoInformative">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="enAttentePriseEnCharge" />
+            <xs:enumeration value="enCours" />
+            <xs:enumeration value="enAttenteDeResiliation" />
+            <xs:enumeration value="resiliee" />
+            <xs:enumeration value="rejetee" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomPrestataire">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifRefus">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroPoste">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="11" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpriseBasseFrequence">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OUI" />
+            <xs:enumeration value="NON" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdispoRecopieImpulsion">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OUI" />
+            <xs:enumeration value="NON" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurEnergie">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="99999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurVolume">
+        <xs:restriction base="xs:float" />
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeMateriel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="compteur" />
+            <xs:enumeration value="emetteur" />
+            <xs:enumeration value="compteurEtEmetteur" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TorigineDemandeIntDdC">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fournisseur" />
+            <xs:enumeration value="interne" />
+            <xs:enumeration value="clientFinal" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeDetendeur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbrePCE">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="100000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeExploitation">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeAntenneModem">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidUC">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieUniteCentrale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielUniqueUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionBundleLogicielUniqueUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielSocleUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionBundleSocleUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielCompatibleUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionRootfsUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionNoyauUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionUBootUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielCiblePeripherique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionBundlePeripherique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielFabricantUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionBundleLogicielFabricantUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatUC">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Receptionne" />
+            <xs:enumeration value="Pose" />
+            <xs:enumeration value="Communicant" />
+            <xs:enumeration value="Operationnel" />
+            <xs:enumeration value="NonOperationnel" />
+            <xs:enumeration value="Depose" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomTemplateActifUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotModuleGPS">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ON" />
+            <xs:enumeration value="OFF" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielPackageeModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielDSPModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielApplicatifModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielCompatibleModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionHardwareModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpuissanceEmissionModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PMax" />
+            <xs:enumeration value="PMax-3dB" />
+            <xs:enumeration value="PMax-6dB" />
+            <xs:enumeration value="PMax-9dB" />
+            <xs:enumeration value="PMax-12dB" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotAntenneModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleAntenneModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeAntenneModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Courte_de_type_baton" />
+            <xs:enumeration value="Omnidirectionnelle_5dBi" />
+            <xs:enumeration value="Omnidirectionnelle_demi-onde" />
+            <xs:enumeration value="Sectorielle_type_YAGI" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidModemWAN">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionLogicielCompatibleModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionHardwareModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIMEImodemWAN">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{15}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TadresseMAXmodemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieCarteSIMmodemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleCarteSIMmodemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIMSIcarteSIMmodemWAN">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{15}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomFournisseur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotAntenneModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleAntenneModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeAntenneModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Integree_de_type_tige_monopole" />
+            <xs:enumeration value="Integree_de_type_tige_dipole" />
+            <xs:enumeration value="Deportee_de_type_combo" />
+            <xs:enumeration value="Deportee_type_baton" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleModuleGPS">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionFirmwareModuleGPS">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotAntenneGPS">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleAntenneModuleGPS">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeAntenneModuleGPS">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Integree_de_type_patch" />
+            <xs:enumeration value="Deportee_de_type_combo" />
+            <xs:enumeration value="Deportee_amplifiee" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpuissanceEmissionMaxModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PMax" />
+            <xs:enumeration value="PMax-3dB" />
+            <xs:enumeration value="PMax-6dB" />
+            <xs:enumeration value="PMax-9dB" />
+            <xs:enumeration value="PMax-12dB" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TadresseMACModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotDisjoncteurBlocAlim">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleDisjoncteurBlocAlim">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieConvertisseurBlocAlim">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleConvertisseurBlocAlim">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumLotParasurtenseurBlocAlim">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleParasurtenseurBlocAlim">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieCarteBrassage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleCarteBrassage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionHardwareCarteBrassage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TreferenceCommutateurEthernet">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TreferenceExtenseurGPIO">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TetatReserveEnergieCarteBrassage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieCoffretConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodeleCoffretConcentrateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TimpulsionsCourantCompteur">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0000000000" />
+            <xs:maxInclusive value="9999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatEmetteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Signale" />
+            <xs:enumeration value="Pose" />
+            <xs:enumeration value="Communicant" />
+            <xs:enumeration value="Non_communicant" />
+            <xs:enumeration value="Operationnel" />
+            <xs:enumeration value="Non_operationnel" />
+            <xs:enumeration value="Degrade" />
+            <xs:enumeration value="Depose" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumInterventionDdC">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatVecteurEtatCourant">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fraude" />
+            <xs:enumeration value="utilisationSortieClient" />
+            <xs:enumeration value="accesInterfaceLocaleOuAdistanceDuDdC" />
+            <xs:enumeration value="sous-tension" />
+            <xs:enumeration value="retourAPuissanceDeTransmissionMaximale" />
+            <xs:enumeration value="jourDePassageAHeureEteOuHiver" />
+            <xs:enumeration value="miseAJourLogicielPartiellementTelechargee" />
+            <xs:enumeration value="miseAJourLogicielValideeEtMiseEnService" />
+            <xs:enumeration value="modeIntegration" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidEntreeJournalEvt">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="30" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcompteurRepetitionEntreeJournalEvt">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeEvtEntreeJournalEvt">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdonneesEvtEntreeJournalEvt">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeModulationTrames">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="WM-2400" />
+            <xs:enumeration value="WM-4800" />
+            <xs:enumeration value="WM-HSPEED" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidReponse">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePrioriteIncident">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeOperationAlarme">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ajout" />
+            <xs:enumeration value="cloture" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifClotureAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleMotifClotureAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutIncident">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ouvert" />
+            <xs:enumeration value="enCours" />
+            <xs:enumeration value="enAttente" />
+            <xs:enumeration value="clos" />
+            <xs:enumeration value="abandonne" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidEvenement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeEvenement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleTypeEvenement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeObjetGenerateurEvt">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidObjetGenerateurEvt">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeChampContexteEvt">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurChampContexteEvt">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutActivation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="actif" />
+            <xs:enumeration value="inactif" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidUtilisateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomUtilisateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TprenomUtilisateur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidProfil">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidEntite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidApplication">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleProfil">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdescriptionProfil">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidRole">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceDemandeClient">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="H" />
+            <xs:enumeration value="P" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaccesFacilite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleTypeClient">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="professionnel" />
+            <xs:enumeration value="particulier" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomEtprenomAbonne">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TContactPrivilegie">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TaccessFacilite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidBI">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdescriptionEchecIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeJournauxEvt">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="erreur" />
+            <xs:enumeration value="trace" />
+            <xs:enumeration value="evenement" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeVerification">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeOperationCalendrier">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="miseAJourCalendrier" />
+            <xs:enumeration value="releveADate" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TorigineDemandeConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fournisseur" />
+            <xs:enumeration value="clientFinal" />
+            <xs:enumeration value="interne" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeOperationDemande">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="creation" />
+            <xs:enumeration value="annulation" />
+            <xs:enumeration value="abandon" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleMotifStatutIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidIncidentRegroupement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeOperationIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeRegion">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleTypeIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TorigineTypeIncident">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TpieceJointe">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TreponseDemandeClient">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifEchec">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeChampContexteAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurChampContexteAlarme">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleAccreditation">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeEtatPlanification">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="nonPlanifie" />
+            <xs:enumeration value="strategique" />
+            <xs:enumeration value="operationnel" />
+            <xs:enumeration value="deploye" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcreneauHorairePrevu">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutActivationEmetteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="active" />
+            <xs:enumeration value="desactive" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionHardwareUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeConnexionWAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="radio" />
+            <xs:enumeration value="filaire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TproprietaireUC">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GrDF" />
+            <xs:enumeration value="Autre" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbModemLAN">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumRevHardwareDdC">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumRevSoftwareDdC">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidDernierEcartIndex">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TindexElecDernierEcartIndex">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TindexMecaDernierEcartIndex">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TidEcartIndex">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TindexElecEcartIndex">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0000000000" />
+            <xs:maxInclusive value="9999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TindexMecaEcartIndex">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0000000000" />
+            <xs:maxInclusive value="9999999999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TetatCapteur">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="signal_normal" />
+            <xs:enumeration value="signal_trop_faible" />
+            <xs:enumeration value="signal_faible" />
+            <xs:enumeration value="signal_trop_fort" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcorrectionPenteHorlogeJour">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidKMOB">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieUCReponse">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidModemLANReponse">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsignalRSSImontant">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="-999.9" />
+            <xs:maxInclusive value="999.9" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsignalRSSIdescendant">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="-999.9" />
+            <xs:maxInclusive value="999.9" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeMaxFenetreRcptEnvoiTramePose">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsystemeSource">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUP" />
+            <xs:enumeration value="PQR" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionProtocoleLANL6">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="7" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieDetendeur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="14" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSAP">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="15" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifRefus">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleMotifDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifEchecIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TlibelleMotifEchecIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeConnexionWAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="radio" />
+            <xs:enumeration value="filaire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbreLogs">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="99" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TadresseAcces">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieUC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomFabricant">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tmodele">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionHardware">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionProtocoleLANCI-Field">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceNotificationCRI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CRI_Pose" />
+            <xs:enumeration value="CRI_Refus" />
+            <xs:enumeration value="CRI_Qualite" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeErreur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomAffichage">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidInterventionSite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutInterventionSite">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="succes" />
+            <xs:enumeration value="echec" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceDISite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSerieCarteSIM">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumSequenceIntervention">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TversionReferentiel">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="256" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdebitMax">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeModemWAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="interne" />
+            <xs:enumeration value="externe" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeAntenneGPS">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumPortModemLAN">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdureeAttenteMsgMontantEcouteMsgDesc">
+        <xs:restriction base="xs:integer">
+            <xs:maxInclusive value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tversion">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Turl">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypePeripherique">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="modemLAN" />
+            <xs:enumeration value="modemWAN" />
+            <xs:enumeration value="moduleGPS" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomFabricantPeripherique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodelePeripherique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeCommande">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="lecture" />
+            <xs:enumeration value="ecriture" />
+            <xs:enumeration value="declenchementInstPing" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceDemande">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="MADD" />
+            <xs:enumeration value="PRES" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TreferenceCourrier">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtitreDocument">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomPrenomDestinataire">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Theure">
+        <xs:restriction base="xs:time" />
+    </xs:simpleType>
+    <xs:simpleType name="TreferenceTemplate">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidTransaction">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TprestataireEditique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutReception">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="OK" />
+            <xs:enumeration value="KO" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifRejet">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceCom">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeCom">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="courrier" />
+            <xs:enumeration value="sms" />
+            <xs:enumeration value="email" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TuniteGeocodage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="lambert2e" />
+            <xs:enumeration value="WGS84" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeStatutDemande">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="recevable" />
+            <xs:enumeration value="nonRecevable" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidPointHaut">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutPointHaut">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnoteMacro">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnoteSimu">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcommentaireSimu">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcommunesCouvertes">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tsubstituts">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeBatiment">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcommentaireSite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ThauteurAntenne">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TidEtude">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Trayon">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- ________________________       -->
+    <!-- PIVOT APPRO LOGISTIQUE       -->
+    <!--                                                  -->
+    <xs:simpleType name="TtypeCommandeLogistique">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DMR" />
+            <xs:enumeration value="DRM" />
+            <xs:enumeration value="DRG" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidDemandeOrigine">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmotifRetour">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="recyclage" />
+            <xs:enumeration value="litige" />
+            <xs:enumeration value="defectueux" />
+            <xs:enumeration value="excedent" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tnom">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tprenom">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tconsignes">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidAdresse">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroFax">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{10}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidGaia">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TorganisationAchat">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeGroupeAcheteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeArticle">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tdivision">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tmagasin">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeImputation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EOTP" />
+            <xs:enumeration value="CCA" />
+            <xs:enumeration value="ORDRE" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidPlateformeLogistique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidCommande">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutCommande">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="enregistree" />
+            <xs:enumeration value="confirmee" />
+            <xs:enumeration value="priseEnCompte" />
+            <xs:enumeration value="livree" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidLigneCommande">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tquantite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroBonLivraison">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TCAB">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TCABCompteurGMAO">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TuniteQuantite">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeEnvoi">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="envoi" />
+            <xs:enumeration value="annulation" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidTransactionSAP">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeFournisseurPrestataire">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- ________________________       -->
+    <!-- PIVOT ACCREDITATION             -->
+    <!--                                                  -->
+    <xs:simpleType name="TcodeRejet">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- ________________________       -->
+    <!-- PIVOTS GESTION DES BAUX     -->
+    <!--                                                  -->
+    <xs:simpleType name="TidFournisseur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidContrat">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidReception">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutRedevance">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="cree" />
+            <xs:enumeration value="lancee" />
+            <xs:enumeration value="receptionnee" />
+            <xs:enumeration value="blocage" />
+            <xs:enumeration value="blocagePaiement" />
+            <xs:enumeration value="miseEnPaiementDemandee" />
+            <xs:enumeration value="paiementEffectue" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tsociete">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidLoyer">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidPoste">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutPoste">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="supprime" />
+            <xs:enumeration value="bloque" />
+            <xs:enumeration value="actif" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeImputation">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tmontant">
+        <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse" />
+            <xs:pattern value="[0-9]{1,6}\.[0-9]{2,2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroFacture">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroPaiement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIBAN2007Identifier">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{2,2}[0-9]{2,2}[a-zA-Z0-9]{1,30}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- ________________________       -->
+    <!-- PIVOTS FOURNISSEUR             -->
+    <!--                                                  -->
+    <xs:simpleType name="TstatutFournisseur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TgroupeDeCompte">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TraisonSociale">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TSIRET">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{14,14}" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroTVAIntraCommunautaire">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tdevise">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="3" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TconditionPaiement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TmodePaiement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtitulaireDuCompte">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodePaysBanque">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TclefBancaire">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroCompte">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TclefRIB">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeOperation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="creation" />
+            <xs:enumeration value="modification" />
+            <xs:enumeration value="suppression" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeAction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ajout" />
+            <xs:enumeration value="suppression" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidDemandeIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneDemandeIntervention">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidExterneIncidentRegroupement">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeContexteApplication">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SIAS" />
+            <xs:enumeration value="TICC" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeInstallationModuleRadio">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="faceAvant" />
+            <xs:enumeration value="enCoffret" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdateOuvertureHotline">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TdateFermetureHotline">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TheureOuvertureHotline">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TheureFermetureHotline">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsignataireGrDF">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="1000" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidPrestataire">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="Tsubdivision">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="2" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomExpediteur">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnumeroTSA">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tetranger">
+        <xs:restriction base="xs:string">
+            <xs:length value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TtypeDocument">
+        <xs:restriction base="xs:string">
+            <xs:length value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TinterlocuteurGrDF">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcleGenerique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurGenerique">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="250" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TflagPassageTLRV">
+        <xs:restriction base="xs:boolean" />
+    </xs:simpleType>
+    <xs:simpleType name="TtypeAgregatConso">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Annuel" />
+            <xs:enumeration value="Mensuel" />
+            <xs:enumeration value="Hebdomadaire" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TflagCouverture">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="O" />
+            <xs:enumeration value="N" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TvaleurSeuil">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="21" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeSeuil">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Annuel" />
+            <xs:enumeration value="Janvier" />
+            <xs:enumeration value="Fevrier" />
+            <xs:enumeration value="Mars" />
+            <xs:enumeration value="Avril" />
+            <xs:enumeration value="Mai" />
+            <xs:enumeration value="Juin" />
+            <xs:enumeration value="Juillet" />
+            <xs:enumeration value="Aout" />
+            <xs:enumeration value="Septembre" />
+            <xs:enumeration value="Octobre" />
+            <xs:enumeration value="Novembre" />
+            <xs:enumeration value="Decembre" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Tcanal">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Web" />
+            <xs:enumeration value="Push" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeTypeConsommation">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="conforme" />
+            <xs:enumeration value="anomalie" />
+            <xs:enumeration value="erreur" />
+            <xs:enumeration value="annulee" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TjourPublication">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1" />
+            <xs:maxInclusive value="28" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeCompatibiliteDdC">
+        <xs:restriction base="xs:string">
+            <xs:length value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomFichierVerCibleSoftwareDdC">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnomFichier">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIDsouscription">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="200" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TIDexterneFournisseur">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="0" />
+            <xs:maxLength value="50" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeMotifForcage">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="0" />
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+            <xs:enumeration value="3" />
+            <xs:enumeration value="4" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TstatutSI">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="EPOD" />
+            <xs:enumeration value="DISCO" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TnbreConcentrateur">
+        <xs:restriction base="xs:integer" />
+    </xs:simpleType>
+    <xs:simpleType name="TsignalRSSImoyen">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="-999.99" />
+            <xs:maxInclusive value="0" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TsourceAutoReleve">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Omega" />
+            <xs:enumeration value="PortailClient" />
+            <xs:enumeration value="SVI" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TorigineAutoReleve">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="fournisseur" />
+            <xs:enumeration value="interne" />
+            <xs:enumeration value="clientFinal" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TidLot">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="8" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TcodeRetour">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="25"/>
+            <xs:maxLength value="25"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

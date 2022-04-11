@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright GrDF 2013 -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc.hdr="com.grdf.poc.header.v1.1" targetNamespace="com.grdf.poc.header.v1.1" elementFormDefault="qualified">
+	<xsd:element name="pocHdr" type="poc.hdr:TpocHdr"/>
+	<!-- Types complexes -->
+	<xsd:complexType name="TpocHdr">
+		<xsd:sequence>
+			<xsd:element name="idFlux" type="poc.hdr:TidFlux"/>
+			<xsd:element name="idFonc" type="poc.hdr:TidFonc"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<!-- Types simples -->
+	<xsd:simpleType name="TidFlux">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TidFonc">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="255"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

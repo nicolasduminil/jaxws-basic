@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="com.grdf.poc.indexAutoReleve.V1.1.common"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="com.grdf.poc.indexAutoReleve.V1.1.common"
+  xmlns:poc.type="com.grdf.poc.type.v1.38"
+  xmlns:tns="com.grdf.poc.indexAutoReleve.V1.1.common" elementFormDefault="qualified">
+  <xs:import namespace="com.grdf.poc.type.v1.38" schemaLocation="com.grdf.poc.type.v1.38.xsd"/>
+  <xs:element name="indexAutoReleve">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PCE" type="ns1:PCETypeLocal" />
+        <xs:element name="sourceAutoReleve" type="poc.type:TsourceAutoReleve" />
+        <xs:element name="origineAutoReleve" type="poc.type:TorigineAutoReleve" />
+        <xs:element name="dateDemande" type="poc.type:Thorodate" />
+        <xs:element name="idExterneDemande" type="ns1:idExterneDemandeTypeLocal" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="TIndex">
+    <xs:sequence>
+      <xs:element name="valeurIndex" type="poc.type:TvaleurIndex" />
+      <xs:element name="codeQualificationIndex" type="poc.type:TcodeQualificationIndex">
+        <xs:annotation>
+          <xs:documentation>{MES; EST; COR}</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="horodateIndex" type="poc.type:Thorodate" />
+      <xs:element name="codeTypeIndex" type="poc.type:TcodeTypeIndex">
+        <xs:annotation>
+          <xs:documentation>{Conforme; Suspect; Erreur; Annulé}</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="codeModeAcquisitionIndex" type="poc.type:TcodeModeAcquisitionIndex">
+        <xs:annotation>
+          <xs:documentation>{Télérelève; Intervention; Autorelève; Non Collecté; Autorelevé RAP; Relève à pied;
+            Autorelevé Fournisseur; Autorelevé interne; Autorelevé Portail client; Autorelevé SVI}
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PCETypeLocal">
+    <xs:sequence>
+      <xs:element name="clePCE" type="poc.type:TclePCE" />
+      <xs:element name="compteur" type="ns1:compteurTypeLocal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="compteurTypeLocal">
+    <xs:sequence>
+      <xs:element name="cleCompteur" type="poc.type:TcleCompteur" minOccurs="0" />
+      <xs:element name="index" type="ns1:TIndex" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="idExterneDemandeTypeLocal">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="8" />
+    </xs:restriction>
+  </xs:simpleType>
+</schema>

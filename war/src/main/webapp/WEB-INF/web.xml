@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" id="WsExample">
+  <display-name>Create auto index statement service</display-name>
+  <servlet>
+    <servlet-name>AutoIndexStatement</servlet-name>
+    <servlet-class>com.grdf.poc.auto.index.CreateAutoIndexStatementService</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AutoIndexStatement</servlet-name>
+    <url-pattern>/auto</url-pattern>
+  </servlet-mapping>
+</web-app>

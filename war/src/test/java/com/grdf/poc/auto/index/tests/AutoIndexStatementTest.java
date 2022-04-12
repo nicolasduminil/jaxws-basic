@@ -48,7 +48,6 @@ public class AutoIndexStatementTest
   {
     AutoIndexHandler handler = new AutoIndexHandler();
     Future<?> task = creerIndexAutoReleveService.getCreerIndexAutoReleveServiceSOAPPort().creerIndexAutoReleveAsync(getIndexAutoReleveRequestType(), handler);
-    logger2.info("*** Have invoked the service");
     while (!task.isDone())
     {
       logger2.info("*** Waiting ...");

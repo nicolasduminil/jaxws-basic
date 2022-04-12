@@ -1,50 +1,62 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:poc.hdr="com.grdf.poc.header.v1.1" xmlns:Q1="com.grdf.poc.IndexAutoReleveRequest-v1.2" xmlns:Q2="com.grdf.poc.IndexAutoReleveResponse-v1.2" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="com.grdf.poc.CreerIndexAutoReleveService:1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="com.grdf.poc.transverse.v1.1" name="CreerIndexAutoReleve" targetNamespace="com.grdf.poc.CreerIndexAutoReleveService:1">
-	<wsdl:types>
-		<xsd:schema targetNamespace="com.grdf.poc.CreerIndexAutoReleveService:1">
-			<xsd:import namespace="com.grdf.poc.IndexAutoReleveRequest-v1.2" schemaLocation="../xsd/SOME03-IndexAutoReleveRequest-v1.2.xsd"/>
-			<xsd:import namespace="com.grdf.poc.IndexAutoReleveResponse-v1.2" schemaLocation="../xsd/SOME03-IndexAutoReleveResponse-v1.2.xsd"/>
-			<xsd:import namespace="com.grdf.poc.header.v1.1" schemaLocation="../xsd/pivot/com.grdf.poc.header.v1.1.xsd"/>
-		</xsd:schema>
-	</wsdl:types>
-	<wsdl:message name="CreerIndexAutoReleveRequestMessage">
-		<wsdl:part name="parameters" element="Q1:indexAutoReleveRequest">
+<wsdl:definitions xmlns:poc.hdr="com.grdf.poc.header.v1.1"
+  xmlns:Q1="com.grdf.poc.IndexAutoReleveRequest-v1.2" xmlns:Q2="com.grdf.poc.IndexAutoReleveResponse-v1.2"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="com.grdf.poc.CreerIndexAutoReleveService:1"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:ns="com.grdf.poc.transverse.v1.1" name="CreerIndexAutoReleve"
+  targetNamespace="com.grdf.poc.CreerIndexAutoReleveService:1">
+  <wsdl:types>
+    <xsd:schema targetNamespace="com.grdf.poc.CreerIndexAutoReleveService:1">
+      <xsd:import namespace="com.grdf.poc.IndexAutoReleveRequest-v1.2"
+        schemaLocation="../xsd/SOME03-IndexAutoReleveRequest-v1.2.xsd" />
+      <xsd:import namespace="com.grdf.poc.IndexAutoReleveResponse-v1.2"
+        schemaLocation="../xsd/SOME03-IndexAutoReleveResponse-v1.2.xsd" />
+      <xsd:import namespace="com.grdf.poc.header.v1.1"
+        schemaLocation="../xsd/pivot/com.grdf.poc.header.v1.1.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CreerIndexAutoReleveRequestMessage">
+    <wsdl:part name="parameters" element="Q1:indexAutoReleveRequest">
     </wsdl:part>
-	</wsdl:message>
-	<wsdl:message name="CreerIndexAutoReleveResponseMessage">
-		<wsdl:part name="parameters" element="Q2:indexAutoReleveResponse">
+  </wsdl:message>
+  <wsdl:message name="CreerIndexAutoReleveResponseMessage">
+    <wsdl:part name="parameters" element="Q2:indexAutoReleveResponse">
     </wsdl:part>
-	</wsdl:message>
-	<wsdl:message name="pocHdrMessage">
-		<wsdl:part name="pocHdr" element="poc.hdr:pocHdr"/>
-	</wsdl:message>
-	<wsdl:portType name="CreerIndexAutoReleveServicePort">
-		<wsdl:operation name="creerIndexAutoReleve">
-			<wsdl:documentation>
-				Creer Index AutoReleve service.
-			</wsdl:documentation>
-			<wsdl:input name="CreerIndexAutoReleve" message="tns:CreerIndexAutoReleveRequestMessage">
-    </wsdl:input>
-			<wsdl:output name="CreerIndexAutoReleveResponse" message="tns:CreerIndexAutoReleveResponseMessage">
-    </wsdl:output>
-		</wsdl:operation>
-	</wsdl:portType>
-	<wsdl:binding name="CreerIndexAutoReleveServiceSOAPBinding" type="tns:CreerIndexAutoReleveServicePort">
-		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-		<wsdl:operation name="creerIndexAutoReleve">
-			<soap:operation soapAction="http://com.grdf.poc/ticc/CreerIndexAutoReleveService/CreerIndexAutoReleve"/>
-			<wsdl:input>
-				<soap:body use="literal"/>
-				<soap:header message="tns:pocHdrMessage" part="pocHdr" use="literal"/>
-			</wsdl:input>
-			<wsdl:output>
-				<soap:body use="literal"/>
-			</wsdl:output>
-		</wsdl:operation>
-	</wsdl:binding>
-	<wsdl:service name="CreerIndexAutoReleveService">
-		<wsdl:port name="CreerIndexAutoReleveServiceSOAPPort" binding="tns:CreerIndexAutoReleveServiceSOAPBinding">
-			<soap:address location="http://localhost:7001/war/auto"/>
-		</wsdl:port>
-	</wsdl:service>
+  </wsdl:message>
+  <wsdl:message name="pocHdrMessage">
+    <wsdl:part name="pocHdr" element="poc.hdr:pocHdr" />
+  </wsdl:message>
+  <wsdl:portType name="CreerIndexAutoReleveServicePort">
+    <jaxws:bindings xmlns:jaxws="http://java.sun.com/xml/ns/jaxws">
+      <jaxws:enableAsyncMapping>true</jaxws:enableAsyncMapping>
+    </jaxws:bindings>
+    <wsdl:operation name="creerIndexAutoReleve">
+      <wsdl:documentation>
+        Creer Index AutoReleve service.
+      </wsdl:documentation>
+      <wsdl:input name="CreerIndexAutoReleve" message="tns:CreerIndexAutoReleveRequestMessage">
+      </wsdl:input>
+      <wsdl:output name="CreerIndexAutoReleveResponse" message="tns:CreerIndexAutoReleveResponseMessage">
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreerIndexAutoReleveServiceSOAPBinding" type="tns:CreerIndexAutoReleveServicePort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="creerIndexAutoReleve">
+      <soap:operation
+        soapAction="http://com.grdf.poc/ticc/CreerIndexAutoReleveService/CreerIndexAutoReleve" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:pocHdrMessage" part="pocHdr" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreerIndexAutoReleveService">
+    <wsdl:port name="CreerIndexAutoReleveServiceSOAPPort" binding="tns:CreerIndexAutoReleveServiceSOAPBinding">
+      <soap:address location="http://localhost:7001/war/auto" />
+    </wsdl:port>
+  </wsdl:service>
 </wsdl:definitions>

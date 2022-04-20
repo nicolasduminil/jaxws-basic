@@ -14,7 +14,7 @@ import javax.xml.ws.*;
 public class AutoIndexStatementTest
 {
   private CreerIndexAutoReleveService creerIndexAutoReleveService;
-  public static final Logger logger2 = Logger.getLogger("com.grdf.poc.auto.index.tests");
+  private static final Logger logger2 = Logger.getLogger("com.grdf.poc.auto.index.tests");
 
   @Before
   public void setup() throws Exception

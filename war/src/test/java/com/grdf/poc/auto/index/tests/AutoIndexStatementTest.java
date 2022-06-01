@@ -27,9 +27,6 @@ public class AutoIndexStatementTest
     assertNotNull(indexAutoReleveResponseType);
     assertNotNull(indexAutoReleveResponseType.getIndexAutoReleve());
     assertNotNull(indexAutoReleveResponseType.getIndexAutoReleve().getIdExterneDemande());
-    //assertEquals("Id externe demande", indexAutoReleveResponseType.getIndexAutoReleve().getIdExterneDemande());
-    assertEquals("&amp;gt;160M3/h", indexAutoReleveResponseType.getIndexAutoReleve().getIdExterneDemande());
-    assertEquals(">160M3/h", StringEscapeUtils.unescapeHtml4("&gt;160M3/h"));
     assertNotNull(indexAutoReleveResponseType.getIndexAutoReleve().getOrigineAutoReleve());
     assertEquals(TorigineAutoReleve.CLIENT_FINAL,
         indexAutoReleveResponseType.getIndexAutoReleve().getOrigineAutoReleve());
@@ -45,8 +42,7 @@ public class AutoIndexStatementTest
   private IndexAutoReleve getIndexAutoReleve() throws DatatypeConfigurationException
   {
     IndexAutoReleve indexAutoReleve = new IndexAutoReleve();
-    //indexAutoReleve.setIdExterneDemande("Id externe demande");
-    indexAutoReleve.setIdExterneDemande("&amp;gt;160M3/h");
+    indexAutoReleve.setIdExterneDemande(">160M3/h");
     indexAutoReleve.setDateDemande(DatatypeFactory.newInstance().newXMLGregorianCalendar(LocalDate.now().toString()));
     indexAutoReleve.setPCE(getPCELocal());
     indexAutoReleve.setSourceAutoReleve(TsourceAutoReleve.OMEGA);

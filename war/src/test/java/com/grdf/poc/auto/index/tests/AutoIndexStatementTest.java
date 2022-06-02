@@ -1,13 +1,13 @@
 package com.grdf.poc.auto.index.tests;
 
-import static org.junit.Assert.*;
-import java.net.*;
-import java.time.*;
-import javax.xml.datatype.*;
-
-import org.apache.commons.text.*;
 import org.grdf.poc.wsdl.auto.index.*;
 import org.junit.*;
+
+import javax.xml.datatype.*;
+import java.net.*;
+import java.time.*;
+
+import static org.junit.Assert.*;
 
 public class AutoIndexStatementTest
 {

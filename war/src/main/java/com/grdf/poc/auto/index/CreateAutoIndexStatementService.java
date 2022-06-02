@@ -12,38 +12,16 @@ public class CreateAutoIndexStatementService implements CreerIndexAutoReleveServ
 {
   private Logger logger = Logger.getLogger("com.grdf.poc.auto.index.CreateAutoIndexStatementService");
 
-  @SuppressWarnings("unchecked")
   @Override
-  public Response<IndexAutoReleveResponseType> creerIndexAutoReleveAsync(
-      IndexAutoReleveRequestType indexAutoReleveRequestType)
+  public Response<IndexAutoReleveResponseType> creerIndexAutoReleveAsync(IndexAutoReleveRequestType parameters)
   {
-    Response<IndexAutoReleveResponseType> response = null;
-    try
-    {
-      response = Response.class.newInstance();
-    } catch (InstantiationException | IllegalAccessException e)
-    {
-      e.printStackTrace();
-    }
-    logger.info("*** CreateAutoIndexStatementService.creerIndexAutoReleveAsync()");
-    return response;
+    return null;
   }
 
-  @SuppressWarnings("unchecked")
   @Override
-  public Future<?> creerIndexAutoReleveAsync(IndexAutoReleveRequestType indexAutoReleveRequestType,
-      AsyncHandler<IndexAutoReleveResponseType> asyncHandler)
+  public Future<?> creerIndexAutoReleveAsync(IndexAutoReleveRequestType parameters, AsyncHandler<IndexAutoReleveResponseType> asyncHandler)
   {
-    Future<IndexAutoReleveResponseType> response = null;
-    try
-    {
-      response = Future.class.newInstance();
-    } catch (InstantiationException | IllegalAccessException e)
-    {
-      e.printStackTrace();
-    }
-    logger.info("*** CreateAutoIndexStatementService.creerIndexAutoReleveAsync()");
-    return response;
+    return null;
   }
 
   @Override

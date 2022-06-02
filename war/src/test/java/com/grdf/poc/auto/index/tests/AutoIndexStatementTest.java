@@ -23,14 +23,6 @@ public class AutoIndexStatementTest
   }
 
   @Test
-  public void test() throws DatatypeConfigurationException
-  {
-    IndexAutoReleveResponseType indexAutoReleveResponseType = creerIndexAutoReleveService
-        .getCreerIndexAutoReleveServiceSOAPPort().creerIndexAutoReleve(getIndexAutoReleveRequestType());
-    assertions (indexAutoReleveResponseType);
-  }
-  
-  @Test
   public void test2() throws DatatypeConfigurationException, InterruptedException, ExecutionException
   {
     Response<IndexAutoReleveResponseType> resp = creerIndexAutoReleveService.getCreerIndexAutoReleveServiceSOAPPort().creerIndexAutoReleveAsync(getIndexAutoReleveRequestType());

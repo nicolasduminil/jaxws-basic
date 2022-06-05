@@ -1,7 +1,8 @@
 package com.grdf.poc.auto.index.handler;
 
-import javax.xml.ws.*;
 import org.grdf.poc.wsdl.auto.index.*;
+
+import javax.xml.ws.*;
 
 public class AutoIndexHandler implements AsyncHandler<IndexAutoReleveResponseType>
 {
@@ -10,13 +11,17 @@ public class AutoIndexHandler implements AsyncHandler<IndexAutoReleveResponseTyp
   @Override
   public void handleResponse(Response<IndexAutoReleveResponseType> resp)
   {
-    try
+    synchronized (this)
     {
-      indexAutoReleveResponseType = resp.get();
-    }
-    catch (Exception ex)
-    {
-      ex.printStackTrace();
+      try
+      {
+        indexAutoReleveResponseType = resp.get();
+        this.notifyAll();
+      }
+      catch (Exception ex)
+      {
+        ex.printStackTrace();
+      }
     }
   }
 
